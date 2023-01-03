@@ -14,9 +14,47 @@
   </head>
   <body>
     <div id="root"></div>
+    <div id="calc"></div>
+    <div id="listFood"></div>
+    <div id="sections"></div>
 
     <script type="text/babel">
       // Her skal du indsætte din react kode
+      ReactDOM.render(
+        <h2>JSX er godt for maven</h2>,
+        document.getElementById("root")
+      );
+
+      ReactDOM.render(<p>{2 + 2}</p>, document.getElementById("calc"));
+
+      const favFood = (
+        <ol>
+          <li>Lasange</li>
+          <li>Pizza</li>
+          <li>Burger</li>
+        </ol>
+      );
+
+      ReactDOM.render(favFood, document.getElementById("listFood"));
+
+      const textSections = (
+        <>
+          <section>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+            nemo nam repellat natus voluptatibus soluta architecto, molestias
+            aliquam eos, quaerat modi pariatur odit asperiores ipsam! Nostrum
+            commodi nulla laboriosam repellendus!
+          </section>
+          <section>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+            distinctio voluptates vitae, labore consequuntur voluptatibus
+            maiores natus itaque harum enim accusamus at sequi ab sunt nihil
+            expedita debitis! Reprehenderit, unde?
+          </section>
+        </>
+      );
+
+      ReactDOM.render(textSections, document.getElementById("sections"));
     </script>
   </body>
 </html>
