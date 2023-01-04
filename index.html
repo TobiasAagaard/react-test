@@ -2,11 +2,11 @@
 <html>
   <head>
     <script
-      src="https://unpkg.com/react@17/umd/react.development.js"
+      src="https://unpkg.com/react@18/umd/react.development.js"
       crossorigin
     ></script>
     <script
-      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
       crossorigin
     ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -14,47 +14,101 @@
   </head>
   <body>
     <div id="root"></div>
-    <div id="calc"></div>
-    <div id="listFood"></div>
-    <div id="sections"></div>
 
     <script type="text/babel">
       // Her skal du indsætte din react kode
-      ReactDOM.render(
-        <h2>JSX er godt for maven</h2>,
-        document.getElementById("root")
-      );
+      const root = ReactDOM.createRoot(document.getElementById("root"));
 
-      ReactDOM.render(<p>{2 + 2}</p>, document.getElementById("calc"));
+      const WriteJSX = () => {
+        return <h1>JSX er godt for maven</h1>;
+      };
 
-      const favFood = (
-        <ol>
-          <li>Lasange</li>
-          <li>Pizza</li>
-          <li>Burger</li>
-        </ol>
-      );
+      const Calc = () => {
+        return <h2>{10 * 10}</h2>;
+      };
 
-      ReactDOM.render(favFood, document.getElementById("listFood"));
+      const FavFood = () => {
+        return (
+          <ol>
+            <li>Pizza</li>
+            <li>Lasange</li>
+            <li>Burger</li>
+          </ol>
+        );
+      };
 
-      const textSections = (
-        <>
-          <section>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-            nemo nam repellat natus voluptatibus soluta architecto, molestias
-            aliquam eos, quaerat modi pariatur odit asperiores ipsam! Nostrum
-            commodi nulla laboriosam repellendus!
+      const TwoText = () => {
+        return (
+          <article>
+            <section>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              optio quas nisi, ab aliquam corrupti saepe maxime perspiciatis
+              soluta velit quidem quam quaerat quod quisquam possimus, molestias
+              obcaecati vel error.
+            </section>
+            <section>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+              optio quas nisi, ab aliquam corrupti saepe maxime perspiciatis
+              soluta velit quidem quam quaerat quod quisquam possimus, molestias
+              obcaecati vel error.
+            </section>
+          </article>
+        );
+      };
+
+      const RfText = () => {
+        return (
+          <>
+            <section>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              vel magni voluptate. Vero sit a aut laudantium. Ut sint in illo,
+              doloribus a error aut! Aperiam sequi rerum pariatur quidem!
+            </section>
+            <section>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam
+              vel magni voluptate. Vero sit a aut laudantium. Ut sint in illo,
+              doloribus a error aut! Aperiam sequi rerum pariatur quidem!
+            </section>
+          </>
+        );
+      };
+
+      const FirstName = () => {
+        return (
+          <>
+            Firstname <input type="text" />
+          </>
+        );
+      };
+
+      const MainWrapper = () => {
+        return (
+          <section className="mainWrapper">
+            <p>Dette er i en main wrapper</p>
           </section>
-          <section>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-            distinctio voluptates vitae, labore consequuntur voluptatibus
-            maiores natus itaque harum enim accusamus at sequi ab sunt nihil
-            expedita debitis! Reprehenderit, unde?
-          </section>
-        </>
-      );
+        );
+      };
 
-      ReactDOM.render(textSections, document.getElementById("sections"));
+      const ClockFunction = () => {
+        const time = 14;
+        return time <= 12 ? <p>godmorgen</p> : <p>god dag</p>;
+      };
+
+      const App = () => {
+        return (
+          <>
+            <WriteJSX />
+            <Calc />
+            <FavFood />
+            <TwoText />
+            <RfText />
+            <FirstName />
+            <MainWrapper />
+            <ClockFunction />
+          </>
+        );
+      };
+      root.render(<App />);
     </script>
   </body>
 </html>
